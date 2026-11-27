@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="知途辩场：知乎经验驱动的学习决策台。" />
+    <title>知途辩场 · 学习决策台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell app-shell--sidebar">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+          <a class="brand" href="#home" data-nav="home" aria-label="知途辩场首页"><span class="brand-mark">知</span><span><strong>知途辩场</strong><small>ZHITU / BETA</small></span></a>
+          <button class="mobile-close" id="closeMenu" type="button" aria-label="关闭导航">×</button>
+        </div>
+        <div class="sidebar-label">WORKSPACE</div>
+        <nav class="sidebar-nav" aria-label="工作台导航">
+          <button class="nav-item is-active" type="button" data-nav="home"><span class="nav-icon">⌂</span><span><strong>主页</strong><small>我的</small></span><b>01</b></button>
+          <button class="nav-item" type="button" data-nav="knowledge"><span class="nav-icon">◇</span><span><strong>知识学习</strong><small>学习路径</small></span><b>02</b></button>
+          <button class="nav-item" type="button" data-nav="industry"><span class="nav-icon">◌</span><span><strong>行业推演</strong><small>观点辩场</small></span><b>03</b></button>
+          <button class="nav-item" type="button" data-nav="ranking"><span class="nav-icon">↗</span><span><strong>排行榜</strong><small>社区热度</small></span><b>04</b></button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-label">CURRENT FOCUS</div>
+          <div class="focus-card"><span class="focus-signal"></span><strong>AI 入行路径</strong><small>进行中 · 32%</small><div class="focus-progress"><span></span></div></div>
+          <div class="sidebar-profile"><span class="profile-avatar">S</span><span><strong>我的学习台</strong><small>本地演示账号</small></span><span class="profile-more">···</span></div>
+        </div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar topbar--workspace">
+          <div class="mobile-brand"><span class="brand-mark">知</span><strong>知途辩场</strong></div>
+          <button class="mobile-menu" id="openMenu" type="button" aria-label="打开导航">☰</button>
+          <div class="breadcrumb"><span>WORKSPACE</span><b>/</b><strong id="pageTitle">主页</strong></div>
+          <div class="topbar-actions"><span class="topbar-status"><span class="status-dot"></span>演示模式</span><button class="ghost-button" id="restartTop" type="button">重新开始 <span>↗</span></button></div>
+        </header>
+
+        <main class="workspace-main" id="workspaceMain">
+          <section class="view view-home is-visible section-pad" data-view="home" id="home">
+            <div class="view-hero"><div><span class="section-index">01 / MY DESK</span><h1>你好，今天想把<br /><em>哪一步走清楚？</em></h1><p>你的学习路径会随着每一次选择更新。先从一个真实问题开始，剩下的交给观点和证据。</p><div class="hero-actions"><button class="primary-button" type="button" data-jump="knowledge">开始新的推演 <span>→</span></button><span class="micro-note"><span class="status-dot"></span>上次更新于今天</span></div></div><div class="home-orbit"><div class="home-orbit-ring"></div><div class="home-orbit-card"><span>MY PATH / 01</span><strong>AI 应用实践</strong><small>下一步：完成一个 RAG 小项目</small><div class="mini-track"><span class="active"></span><span class="active"></span><span></span><span></span></div></div><div class="orbit-sticker">继续<br /><b>32%</b></div></div></div>
+            <div class="home-grid"><article class="home-card home-card--progress"><div class="card-topline"><span class="card-label">MY CURRENT PATH</span><span class="card-arrow">↗</span></div><h2>AI 入行路径</h2><p>从编程基础到第一个真实项目，正在进行第 2 个阶段。</p><div class="home-progress-row"><strong>32%</strong><span>预计还需 6 周</span></div><div class="large-progress"><span></span></div><button class="text-button" type="button" data-jump="knowledge">继续学习 <span>→</span></button></article><article class="home-card home-card--debate"><div class="card-topline"><span class="card-label">LATEST DEBATE</span><span class="debate-badge">ROUND 03</span></div><h2>先学机器学习，还是直接学大模型？</h2><p>三个 Agent 已经完成观点交锋，等你查看最终结论。</p><div class="mini-agents"><span class="mini-agent mini-agent--yellow">路</span><span class="mini-agent mini-agent--mint">实</span><span class="mini-agent mini-agent--orange">慎</span><span class="mini-agents-label">3 个观点已汇合</span></div><button class="text-button" type="button" data-jump="industry">查看辩论 <span>→</span></button></article><article class="home-card home-card--quick"><div class="card-topline"><span class="card-label">QUICK STATS</span></div><div class="quick-stat"><strong>06</strong><span>已完成节点</span></div><div class="quick-stat"><strong>12</strong><span>收藏经验</span></div><div class="quick-stat"><strong>03</strong><span>参与推演</span></div></article></div>
+            <div class="home-section-heading"><div><span class="section-index">RECENT / SAVED</span><h2>最近收藏的经验</h2></div><button class="text-button" type="button" data-jump="ranking">查看排行榜 <span>→</span></button></div><div class="saved-list" id="savedList"></div>
+          </section>
+
+          <section class="view section-pad" data-view="knowledge" id="knowledge">
+            <div class="section-heading"><div><span class="section-index">02 / KNOWLEDGE</span><h2>先把问题说清楚，再看见一条可走的路</h2></div><p>不需要写得很专业。越接近真实困惑，结果越有用。</p></div>
+            <div class="question-layout"><form class="question-card" id="questionForm"><label for="questionInput">你的问题</label><textarea id="questionInput" rows="3" placeholder="例如：零基础想进入 AI 行业，应该先学机器学习还是直接学大模型？">零基础想进入 AI 行业，应该先学机器学习还是直接学大模型？</textarea><div class="example-row" aria-label="问题示例"><button type="button" class="example-chip" data-question="转行做 AI 产品经理，我应该先补技术基础还是先做项目？">转行做 AI 产品经理</button><button type="button" class="example-chip" data-question="我每周只有 6 小时，怎么安排大模型入门学习？">每周只有 6 小时</button><button type="button" class="example-chip" data-question="非计算机专业，进入人工智能行业的第一步是什么？">非科班入行</button></div><div class="form-divider"></div><div class="form-row"><div class="field-group"><label for="levelSelect">当前基础</label><select id="levelSelect"><option>零基础</option><option>有编程基础</option><option>已经从业</option></select></div><div class="field-group"><label for="timeSelect">每周投入</label><select id="timeSelect"><option>6 小时以内</option><option>6—12 小时</option><option>12 小时以上</option></select></div></div><div class="field-group goal-field"><label>你更想得到什么结果？</label><div class="goal-options" role="group" aria-label="学习目标"><button type="button" class="goal-option is-selected">建立完整认知</button><button type="button" class="goal-option">做出第一个项目</button><button type="button" class="goal-option">准备转行或面试</button></div></div><button class="primary-button full-button" type="submit">生成我的路径 <span>→</span></button></form><aside class="aside-note"><div class="note-pin">NOTE / 01</div><h3>路径不是标准答案。</h3><p>我们会把“应该怎么学”与“别人怎么走过来”放在一起。你会看到推荐，也会看到分歧。</p><div class="mini-quote"><span>“</span><p>我不想再收藏一堆内容，却不知道下一步该做什么。</p></div></aside></div>
+            <div class="path-summary"><div class="summary-copy"><span class="label-muted">CURRENT JUDGEMENT</span><h3>先补基础，再用项目验证理解</h3><p>你的目标是建立完整认知。建议不要在“机器学习”和“大模型”之间二选一，而是用最小基础快速进入实践。</p></div><div class="summary-stats"><div><strong>8—10</strong><span>周完成第一轮</span></div><div><strong>6</strong><span>个关键节点</span></div><div><strong>3</strong><span>次项目验证</span></div></div></div><div class="path-map" id="pathMap"></div>
+            <div class="section-heading subsection-heading"><div><span class="section-index">EVIDENCE / VOICES</span><h2>路径旁边，放着真实经验</h2></div><p>不是把高赞内容堆给你，而是提炼它们对当前选择的支持与限制。</p></div><div class="evidence-grid" id="evidenceGrid"></div>
+          </section>
+
+          <section class="view view-industry section-pad" data-view="industry"><div class="debate-header"><div><span class="section-index">03 / INDUSTRY LAB</span><h2>让三个观点，替你把盲区问出来</h2><p class="industry-lede">把知乎经验里的不同立场提炼成 Agent，围绕你的具体问题进行一次可追溯的行业推演。</p></div><div class="debate-status"><span class="status-dot"></span>辩论已完成 <span class="mono-label">ROUND 03</span></div></div><div class="agents-row" id="agentsRow"></div><div class="debate-stage"><div class="stage-top"><span class="stage-label">FINAL SYNTHESIS</span><span class="stage-line"></span><span class="stage-count">03 / 03</span></div><div class="synthesis-grid"><div class="synthesis-main"><span class="recommend-tag">共识建议</span><h3>先用 2 周补齐最小基础，第三周开始做一个能被看见的小项目。</h3><p>直接跳过基础会让你更快“使用”大模型，但不一定更快理解它。对当前的你，最稳妥的路线是基础与实践并行，而不是先完成一整套理论课程。</p></div><div class="synthesis-side"><div class="side-block"><span>争议仍在</span><strong>是否需要先学数学？</strong><small>对应用型目标，不必把数学作为启动门槛；但在模型原理阶段仍需要补齐。</small></div><div class="side-block"><span>下一步</span><strong>完成一个 RAG 小项目</strong><small>用真实资料做问答，验证你是否理解了数据、检索和评估。</small></div></div></div></div><div class="industry-bottom"><div><span class="section-index">RELATED SIGNALS</span><h3>近期行业声音</h3></div><div class="signal-chips"><span>项目作品 > 课程数量</span><span>基础与实践并行</span><span>评估能力正在变重要</span></div></div></section>
+
+          <section class="view section-pad" data-view="ranking"><div class="section-heading"><div><span class="section-index">04 / RANKING</span><h2>社区正在讨论什么？</h2></div><p>按主题和热度，找到值得加入你路径的经验。</p></div><div class="ranking-toolbar"><div class="ranking-tabs"><button class="ranking-tab is-active" type="button" data-rank-filter="all">全部</button><button class="ranking-tab" type="button" data-rank-filter="learning">学习路径</button><button class="ranking-tab" type="button" data-rank-filter="career">行业转型</button><button class="ranking-tab" type="button" data-rank-filter="practice">项目实践</button></div><span class="ranking-updated">UPDATED / TODAY 09:42</span></div><div class="ranking-layout"><div class="ranking-list" id="rankingList"></div><aside class="trend-card"><span class="section-index">TRENDING NOW</span><h3>本周上升最快的讨论</h3><div class="trend-line"><span>01</span><strong>AI Agent 是否需要先学工作流？</strong><b>+28%</b></div><div class="trend-line"><span>02</span><strong>非科班如何准备第一个 AI 项目？</strong><b>+19%</b></div><div class="trend-line"><span>03</span><strong>RAG 项目最容易忽略哪一步？</strong><b>+12%</b></div><button class="text-button" type="button" data-jump="industry">去行业推演 <span>→</span></button></aside></div></section>
+        </main>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="data/demo-data.js"></script><script src="app.js"></script>
+  </body>
+</html>
