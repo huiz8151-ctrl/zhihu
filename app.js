@@ -3,7 +3,7 @@
   const toast = document.querySelector("#toast");
   const sidebar = document.querySelector("#sidebar");
   const pageTitle = document.querySelector("#pageTitle");
-  const viewNames = { home: "主页", knowledge: "知识学习", industry: "行业推演", ranking: "排行榜" };
+  const viewNames = { home: "主页", industry: "行业推演", ranking: "排行榜" };
   let toastTimer;
 
   function showToast(message) {
@@ -14,6 +14,7 @@
   }
 
   function showView(name, updateHash = true) {
+    if (name === "knowledge") name = "industry";
     document.querySelectorAll("[data-view]").forEach((view) => view.classList.toggle("is-visible", view.dataset.view === name));
     document.querySelectorAll("[data-nav]").forEach((item) => item.classList.toggle("is-active", item.dataset.nav === name));
     pageTitle.textContent = viewNames[name] || "主页";
@@ -65,25 +66,6 @@
     `).join("");
   }
 
-  function bindForms() {
-    const questionInput = document.querySelector("#questionInput");
-    document.querySelectorAll(".example-chip").forEach((button) => button.addEventListener("click", () => {
-      questionInput.value = button.dataset.question;
-      questionInput.focus();
-      showToast("已替换为这个问题，你可以继续调整。");
-    }));
-    document.querySelectorAll(".goal-option").forEach((button) => button.addEventListener("click", () => {
-      document.querySelectorAll(".goal-option").forEach((item) => item.classList.remove("is-selected"));
-      button.classList.add("is-selected");
-    }));
-    document.querySelector("#questionForm").addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (!questionInput.value.trim()) { questionInput.focus(); showToast("先写下一个你真正想解决的问题吧。"); return; }
-      showView("knowledge");
-      showToast("正在结合知乎经验和你的背景生成路径……");
-    });
-  }
-
   document.querySelectorAll(".ranking-tab").forEach((button) => button.addEventListener("click", () => {
     document.querySelectorAll(".ranking-tab").forEach((item) => item.classList.remove("is-active"));
     button.classList.add("is-active");
@@ -96,7 +78,7 @@
   }
 
   document.querySelector("#restartTop").addEventListener("click", restart);
-  renderSaved(); renderPath(); renderEvidence(); renderAgents(); renderRanking(); bindForms();
+  renderSaved(); renderAgents(); renderRanking();
   const initialView = window.location.hash.slice(1);
   if (viewNames[initialView]) showView(initialView, false);
 })();
