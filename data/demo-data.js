@@ -27,11 +27,29 @@ window.demoData = {
     { type: "行业观察", title: "现在更容易被看见的是项目取舍", meta: "986 赞 · AI 产品实践", tone: "yellow" },
     { type: "反向经验", title: "直接学大模型，最后还是会回到基本功", meta: "1.8K 赞 · 转行经验", tone: "orange" }
   ],
-  ranking: [
-    { rank: "01", category: "learning", tag: "学习路径", title: "零基础进入 AI 行业，先学机器学习还是大模型？", author: "AI 学习路线", likes: "2.4K", trend: "+34%" },
-    { rank: "02", category: "practice", tag: "项目实践", title: "用一个 RAG 项目证明自己，最小闭环应该怎么做？", author: "项目拆解", likes: "1.9K", trend: "+26%" },
-    { rank: "03", category: "career", tag: "行业转型", title: "非计算机专业转 AI 产品，第一份作品集怎么准备？", author: "转行经验", likes: "1.6K", trend: "+21%" },
-    { rank: "04", category: "learning", tag: "学习路径", title: "每周只有 6 小时，如何安排大模型入门？", author: "时间管理", likes: "1.2K", trend: "+17%" },
-    { rank: "05", category: "practice", tag: "项目实践", title: "从调用 API 到真正理解 Agent，中间差了什么？", author: "Agent 实践", likes: "986", trend: "+12%" }
+  question: {
+    title: "零基础进入 AI 行业，应该先学机器学习还是直接学大模型？",
+    source: "知乎问题 · 演示数据",
+    answerCount: 128,
+    evidenceCount: 5,
+    updatedAt: "今天 09:42"
+  },
+  questions: [
+    {
+      id: "question-ai-path",
+      title: "零基础进入 AI 行业，应该先学机器学习还是直接学大模型？",
+      source: "知乎问题 · 演示数据",
+      answerCount: 128,
+      experienceCount: 5,
+      updatedAt: "今天 09:42",
+      status: "当前问题"
+    }
+  ],
+  experiences: [
+    { id: "answer-001", questionId: "question-ai-path", type: "answer", source: "zhihu", tag: "高赞回答", title: "基础和项目不应该被排成先后", content: "如果目标是做出东西，基础和项目不应该被排成先后，而应该从第一周就并行。", author: "一位 AI 应用工程师", sourceLabel: "知乎回答 · 学习路线讨论", sourceUrl: "https://www.zhihu.com/", likes: 2400, relevance: 92, stance: "parallel", stanceLabel: "基础与实践并行", addedBy: "system" },
+    { id: "comment-001", questionId: "question-ai-path", type: "comment", source: "zhihu", tag: "关键评论", title: "先做一个小项目，才知道自己缺什么", content: "直接学大模型 API 的反馈很快，但遇到数据和评估问题时，还是会回到机器学习的基本功。", author: "一位算法从业者", sourceLabel: "知乎评论 · 转行经验", sourceUrl: "https://www.zhihu.com/", likes: 1800, relevance: 89, stance: "practice", stanceLabel: "支持实践", addedBy: "system" },
+    { id: "answer-002", questionId: "question-ai-path", type: "answer", source: "zhihu", tag: "高赞回答", title: "把数学当作节点，而不是启动门槛", content: "应用型目标不必等数学全部学完再开始，但进入模型原理阶段后，需要补齐概率、线性代数和优化的基本概念。", author: "一位机器学习研究者", sourceLabel: "知乎回答 · 入门路线", sourceUrl: "https://www.zhihu.com/", likes: 1600, relevance: 86, stance: "support", stanceLabel: "支持基础", addedBy: "system" },
+    { id: "comment-002", questionId: "question-ai-path", type: "comment", source: "zhihu", tag: "关键评论", title: "课程数量不如一个能解释清楚的项目", content: "现在更容易被看见的，不是学过多少课程，而是能否解释一个项目为什么这样设计。", author: "一位产品负责人", sourceLabel: "知乎评论 · AI 产品实践", sourceUrl: "https://www.zhihu.com/", likes: 1200, relevance: 84, stance: "practice", stanceLabel: "支持实践", addedBy: "system" },
+    { id: "answer-003", questionId: "question-ai-path", type: "answer", source: "zhihu", tag: "高赞回答", title: "用最小基础快速进入真实反馈", content: "可以先用两周建立 Python、数据处理和模型评估的最小认知，然后用一个 RAG 项目验证理解，不必等完整学完再动手。", author: "一位 AI 产品经理", sourceLabel: "知乎回答 · 非科班转型", sourceUrl: "https://www.zhihu.com/", likes: 986, relevance: 91, stance: "parallel", stanceLabel: "基础与实践并行", addedBy: "system" },
   ]
 };
